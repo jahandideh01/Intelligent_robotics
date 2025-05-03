@@ -172,6 +172,10 @@ target_link_libraries(node_a ${catkin_LIBRARIES})
 target_link_libraries(node_b ${catkin_LIBRARIES})
 
 
+add_dependencies(node_a ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(node_b ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+
 #############
 ## Install ##
 #############
