@@ -1,0 +1,4 @@
+bool ready
+---
+float32[] coeffs
+

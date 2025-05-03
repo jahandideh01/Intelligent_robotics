@@ -1,0 +1,10 @@
+<launch>
+  <!-- Start Node A -->
+  <node pkg="ir2425_group_16" type="node_a" name="node_a" output="screen" />
+
+  <!-- Start Node B -->
+  <node pkg="ir2425_group_16" type="node_b" name="node_b" output="screen" />
+  <node pkg="ir2425_group_16" type="coeffs_service_server" name="coeffs_service_server" output="screen" />
+</launch>
+
+

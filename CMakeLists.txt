@@ -19,6 +19,13 @@ add_message_files(
   ApriltagIDs.msg
 )
 
+
+add_service_files(
+  FILES
+  Coeffs.srv
+)
+
+
 generate_messages(
   DEPENDENCIES
   std_msgs
@@ -27,6 +34,13 @@ generate_messages(
 catkin_package(
   CATKIN_DEPENDS roscpp std_msgs message_runtime
 )
+
+
+install(DIRECTORY launch
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
+
+
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -175,6 +189,9 @@ target_link_libraries(node_b ${catkin_LIBRARIES})
 add_dependencies(node_a ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(node_b ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
+add_executable(coeffs_service_server src/coeffs_service_server.cpp)
+target_link_libraries(coeffs_service_server ${catkin_LIBRARIES})
+add_dependencies(coeffs_service_server ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 #############
 ## Install ##
