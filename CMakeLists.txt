@@ -189,6 +189,7 @@ target_link_libraries(node_b ${catkin_LIBRARIES})
 add_dependencies(node_a ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(node_b ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
+
 add_executable(coeffs_service_server src/coeffs_service_server.cpp)
 target_link_libraries(coeffs_service_server ${catkin_LIBRARIES})
 add_dependencies(coeffs_service_server ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
