@@ -1,0 +1,4 @@
+bool ready
+---
+int32[] ids
+

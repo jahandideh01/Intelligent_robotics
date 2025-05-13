@@ -1,10 +1,19 @@
 <launch>
-  <!-- Start Node A -->
+  <!-- Start the simulation -->
+  <include file="$(find tiago_iaslab_simulation)/launch/start_simulation.launch">
+    <arg name="world_name" value="iaslab_assignment1" />
+  </include>
+
+  <!-- AprilTag detection node -->
+  <node pkg="tiago_iaslab_simulation" type="apriltag_ids_generator_node" name="apriltag_ids_generator_node" output="screen" />
+
+  <!-- Coefficients service -->
+  <node pkg="ir2425_group_16" type="coeffs_service_server" name="coeffs_service_server" output="screen" />
+
+  <!-- Node A -->
   <node pkg="ir2425_group_16" type="node_a" name="node_a" output="screen" />
 
-  <!-- Start Node B -->
+  <!-- Node B -->
   <node pkg="ir2425_group_16" type="node_b" name="node_b" output="screen" />
-  <node pkg="ir2425_group_16" type="coeffs_service_server" name="coeffs_service_server" output="screen" />
 </launch>
-
 
